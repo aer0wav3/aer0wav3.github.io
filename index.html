@@ -17,8 +17,7 @@ fetch("https://api.github.com/users/aer0wav3/repos?per_page=100")
 .then((data) => {
 	let ul = document.querySelector("ul#links");
 	for (let item of data) {
-		if (item.hasPages)
-			ul.innerHTML += `<li><a href="https://aer0wav3.github.io/${item.name}">${item.name}</a></li>`;
+		ul.innerHTML += `<li><a href="https://aer0wav3.github.io/${item.name}">${item.name}</a></li>`;
 	}
 })
 	</script>
