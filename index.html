@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ærowave</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ærowave</title>
 </head>
 <body>
-    wip
+	<h1>my github stuffs</h1>
+	<p>
+		this is a list of all my websites hosted on github. most of these are tests and don't really matter lol
+	</p>
+	<ul id="links"></ul>
+	<script>
+fetch("https://api.github.com/users/aer0wav3/repos?per_page=100")
+.then((res) => res.json())
+.then((data) => {
+	let ul = document.querySelector("ul#links");
+	for (let item of data) {
+		if (item.hasPages)
+			ul.innerHTML += `<li><a href="https://aer0wav3.github.io/${item.name}">${item.name}</a></li>`;
+	}
+})
+	</script>
 </body>
 </html>
